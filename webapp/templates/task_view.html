@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="tasks">
+    <h1>To-Do</h1>
+    <div class="task">
+        {% if task.status == "done" %}
+            <h2 class="done-task">{{ task.description }}</h2>
+        {% else %}
+            <h2>{{ task.description }}</h2>
+        {% endif %}
+        <p>Status: {{ task.status }}</p>
+        <p>Planned date: {{ task.planned_date }}</p>
+    </div>
+    <div class="task-view">
+        <a href="/"> Return to homepage</a>
+    </div>
+</div>
+</body>
+</html>
