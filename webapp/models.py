@@ -10,7 +10,7 @@ class Task(models.Model):
     planned_date = models.DateField(null=True, blank=True, default="")
 
     def __str__(self):
-        return f"{self.pk}. {self.description}status:{self.status} date:{self.planned_date}"
+        return f"{self.pk}. {self.description} status:{self.status} date:{self.planned_date}"
 
     class Meta:
         db_table = "tasks"
